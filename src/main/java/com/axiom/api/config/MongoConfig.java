@@ -11,7 +11,7 @@ import com.mongodb.MongoClient;
 public class MongoConfig {
 
 	private static final String MONGO_DB_URL = "localhost";
-	private static final String MONGO_DB_NAME = "mobile_db";
+	private static final String MONGO_DB_NAME = "embeded_db";
 
 	@SuppressWarnings("deprecation")
 	@Bean

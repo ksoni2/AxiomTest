@@ -24,7 +24,7 @@ public class MobileSearchServiceImpl implements SearchService {
 	private static final Logger logger = LoggerFactory.getLogger(MobileSearchServiceImpl.class);
 
 	@Autowired
-	private MobilesRepository deviceRepository;
+	private MobilesRepository mobilesRepository;
 
 	@Autowired
 	private CustomBeanMappingService customBeanMappingService;
@@ -32,18 +32,18 @@ public class MobileSearchServiceImpl implements SearchService {
 	@Override
 	public <T> Object getAvailableMobile(Map<String, String> requestKeys, T t) throws ApiException {
 		Response response = new Response();
-		logger.info("<----------------Enter getAvailableDevice|DeviceSearchServiceImpl---------------->");
+		logger.info("<----------------Enter getAvailableMobile|MobileSearchServiceImpl---------------->");
 		try {
 			Mobile mobile = (Mobile) customBeanMappingService.prepareObjectForSearch(requestKeys, t);
-			List<Mobile> deviceList = deviceRepository.findAll(Example.of(mobile, ExampleMatcher.matchingAll()
+			List<Mobile> deviceList = mobilesRepository.findAll(Example.of(mobile, ExampleMatcher.matchingAll()
 					.withIgnoreCase().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING)));
 			response.setStatus(Constants.SUCCESS_STATUS);
 			response.setDevices(deviceList);
 		} catch (Exception e) {
-			logger.error("Exception in DeviceSearchServiceImpl|getAvailableDevice:{}", e);
+			logger.error("Exception in MobileSearchServiceImpl|getAvailableDevice:{}", e);
 			throw new ApiException(ErrorConstants.INTERNAL_ERROR);
 		}
-		logger.info("<----------------Exit getAvailableDevice|DeviceSearchServiceImpl---------------->");
+		logger.info("<----------------Exit getAvailableMobile|MobileSearchServiceImpl---------------->");
 		return response;
 	}
 }

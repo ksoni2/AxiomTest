@@ -22,6 +22,19 @@ public class Mobile implements Serializable {
 	private Release release;
 	private Hardware hardware;
 
+	public Mobile(Long id, String brand, String phone, URL picture, String sim, String resolution, Hardware hardware, Release release)
+	{
+		super();
+		this.id = id;
+		this.brand = brand;
+		this.phone = phone;
+		this.picture = picture;
+		this.sim = sim;
+		this.resolution = resolution;
+		this.release = release;
+		this.hardware = hardware;
+	}
+
 	public Mobile() {
 
 	}

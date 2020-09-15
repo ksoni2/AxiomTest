@@ -8,6 +8,14 @@ public class Release implements Serializable {
 
 	private String announceDate;
 	private Double priceEur;
+	
+	public Release() {}
+
+	public Release(String announceDate, Double priceEur) {
+		super();
+		this.announceDate = announceDate;
+		this.priceEur = priceEur;
+	}
 
 	public String getAnnounceDate() {
 		return announceDate;

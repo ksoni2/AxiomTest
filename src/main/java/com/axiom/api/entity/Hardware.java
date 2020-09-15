@@ -13,6 +13,13 @@ public class Hardware implements Serializable {
 	public String getAudioJack() {
 		return audioJack;
 	}
+	public Hardware() {}
+	public Hardware(String audioJack, String gps, String battery) {
+		super();
+		this.audioJack = audioJack;
+		this.gps = gps;
+		this.battery = battery;
+	}
 
 	public void setAudioJack(String audioJack) {
 		this.audioJack = audioJack;
