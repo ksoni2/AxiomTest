@@ -64,10 +64,10 @@ public class SearchApiApplication {
 	@Bean
 	InitializingBean sendDatabase() {
 		return () -> {
-			logger.info("Calling RestApi to get Devices List");
+			logger.info("Populating Mobiles in Embeded MongoDB");
 			seedData();
 			
-			logger.info("Device List loaded in DB");
+			logger.info("Mobile data loaded in DB");
 		};
 	}
 	 private void seedData() throws MalformedURLException, Exception, JsonProcessingException {
