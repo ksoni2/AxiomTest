@@ -25,5 +25,5 @@ on start of application from an external endpoint.
 1. Go to Project Directory open command prompt
 2. mvn clean install
 3. Go to target folder jar is created
-4. cmd from target folder : java -jar search-api-1.0.jar
+4. cmd from target folder : java -jar mobile-search-api-1.0.jar
 
